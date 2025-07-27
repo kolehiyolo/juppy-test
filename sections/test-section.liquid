@@ -31,16 +31,10 @@
             <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
           </div>
         </div>
-        <div class="product">
-          <div class="image">
-            <img src="{{ 'shoppy-x-ray.svg' | asset_url }}" width="300" height="300">
-          </div>
-          <div class="info">
-            <h3 class="product-name">Product 3</h3>
-            <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
-          </div>
-        </div>
-      </div>    
+      </div> 
+      <div class="products">
+        {% content_for 'blocks' %}
+      </div>   
     </div>
   </div>
 </div>
@@ -90,6 +84,12 @@
 {
   "name": "Test Section",
   "settings": [],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "@theme"
+    }
+  ],
   "presets": [
     {
       "name": "Test Section",
