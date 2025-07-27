@@ -1,0 +1,100 @@
+{% comment %}
+  This section is a test layout for displaying up to three product cards in a responsive grid.
+  It is used to prototype layout and styling logic before integrating live Shopify product data.
+  - Mobile: stacked layout (1 column)
+  - Tablet: 2-column grid
+  - Desktop: 3-column grid
+{% endcomment %}
+
+<div class="test-section full-width">
+  <div class="content">
+    <div class="head">
+      <h1>Test Section</h1>
+    </div>
+    <div class="body">
+      <div class="products">
+        <div class="product">
+          <div class="image">
+            <img src="{{ 'shoppy-x-ray.svg' | asset_url }}" width="300" height="300">
+          </div>
+          <div class="info">
+            <h3 class="product-name">Product 1</h3>
+            <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image">
+            <img src="{{ 'shoppy-x-ray.svg' | asset_url }}" width="300" height="300">
+          </div>
+          <div class="info">
+            <h3 class="product-name">Product 2</h3>
+            <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
+          </div>
+        </div>
+        <div class="product">
+          <div class="image">
+            <img src="{{ 'shoppy-x-ray.svg' | asset_url }}" width="300" height="300">
+          </div>
+          <div class="info">
+            <h3 class="product-name">Product 3</h3>
+            <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
+          </div>
+        </div>
+      </div>    
+    </div>
+  </div>
+</div>
+
+{% stylesheet %}
+  .test-section {
+    display: grid;
+    grid-template-columns: var(--content-grid);
+    background-color: #f6f6f7;
+    padding: 72px 0;
+
+    .content {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+
+      .head {
+
+      }
+
+      .body {
+        .products {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 50px;
+        }
+
+        /* Tablet (2 columns) */
+        @media (min-width: 640px) {
+          .products {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* Desktop (3 columns) */
+        @media (min-width: 1024px) {
+          .products {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+      }
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Test Section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Test Section",
+      "category": "Test"
+    }
+  ]
+}
+{% endschema %}
