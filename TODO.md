@@ -2,10 +2,12 @@
 Render test-section MVP
 Style test-section with CSS
 - product-card must be a block
+- Add placeholders
 
 <!-- ? DOING -->
 Render product-card MVP with placeholders
-- add placeholders
+- variant-swatches is radio selection
+- User can change image on hover
 
 <!-- @ PAUSED -->
 
@@ -17,7 +19,6 @@ Customizer can change variant swatch shape
 Customizer can toggle 'x%' off discount badge
 Customizer can add and edit a heading to test-section
 
-User can change image on hover
 User can change variant
 
 Style test-section with tailwind
