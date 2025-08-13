@@ -11,6 +11,31 @@
   "sections": {
     "test": {
       "type": "test-section",
+      "blocks": {
+        "product_card_XAz8T4": {
+          "type": "product-card",
+          "name": "Product Card",
+          "settings": {},
+          "blocks": {}
+        },
+        "product_card_Verqan": {
+          "type": "product-card",
+          "name": "Product Card",
+          "settings": {},
+          "blocks": {}
+        },
+        "product_card_DzFwRJ": {
+          "type": "product-card",
+          "name": "Product Card",
+          "settings": {},
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "product_card_XAz8T4",
+        "product_card_Verqan",
+        "product_card_DzFwRJ"
+      ],
       "settings": {}
     }
   },
