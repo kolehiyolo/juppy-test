@@ -16,7 +16,7 @@
         <label class="variant-swatch swatch-{{ i }}">
           <input
             type="radio"
-            name="id"
+            name="radio-{{ block.id }}"
             value="swatch-{{ i }}"
             class="variant-swatch-input"
             {% if forloop.first %}checked{% endif %}
