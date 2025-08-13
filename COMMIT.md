@@ -1,7 +1,6 @@
-Create test-section MVP, .liquid with {% stylesheet %}
-- test-section.liquid is ready, with placeholder content for products, and basic but good enough styling
-- Rendered test-section.liquid in index.json, replacing hello-world.liquid
+product-card is a block
+- product-card is now a block, still using placeholder content
+- Updated test-section.liquid to allow/accept @theme blocks, with max 3
 - Caveats
-  - I wanted to make my own .json template, which is the "demo" page that was the final deliverable, but I Was running into issues making it work
-    - I decided to push this somewhere in the later stages of the project, and I made do with rendering the section in index.json
-  - The way this Skeleton theme handles max-width containers is so unorthodox and honestly very unintuitive, but as it is the standard (it seems) throughout the theme, I'll be using it for now
+  - I so wanted it so that product-card is the only @theme block accepted by test-section.liquid, but for some reason, when I do so, regardless of how I try to render the blocks content, it isn't showing up
+  - I added it to the growing list of things I'd like to revisit in the latest stages of the project

@@ -1,0 +1,29 @@
+{% doc %}
+  Renders a product-card block.
+  Uses placeholder content for now
+{% enddoc %}
+
+<div class="product">
+  <div class="image">
+    <img src="{{ 'shoppy-x-ray.svg' | asset_url }}" width="300" height="300">
+  </div>
+  <div class="info">
+    <h3 class="product-name">Product ##</h3>
+    <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
+  </div>
+</div>
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product Card",
+  "settings": [
+  ],
+  "presets": [
+    { "name": "Product Card" }
+  ]
+}
+{% endschema %}
