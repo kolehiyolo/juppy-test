@@ -3,10 +3,11 @@ Render test-section MVP
 Style test-section with CSS
 - product-card must be a block
 - Add placeholders
+- variant-swatches is radio selection
 
 <!-- ? DOING -->
 Render product-card MVP with placeholders
-- variant-swatches is radio selection
+- variant-swatch radio selection is isolated to each product
 - User can change image on hover
 
 <!-- @ PAUSED -->

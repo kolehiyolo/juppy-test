@@ -12,12 +12,18 @@
   </div>
   <div class="info">
     <div class="variant-swatches">
-      <div class="variant-swatch swatch-1"><p>Variant 1</p></div>
-      <div class="variant-swatch swatch-2"><p>Variant 2</p></div>
-      <div class="variant-swatch swatch-3"><p>Variant 3</p></div>
-      <div class="variant-swatch swatch-4"><p>Variant 4</p></div>
-      <div class="variant-swatch swatch-5"><p>Variant 5</p></div>
-      <div class="variant-swatch swatch-6"><p>Variant 6</p></div>
+      {% for i in (1..6) %}
+        <label class="variant-swatch swatch-{{ i }}">
+          <input
+            type="radio"
+            name="id"
+            value="swatch-{{ i }}"
+            class="variant-swatch-input"
+            {% if forloop.first %}checked{% endif %}
+          >
+          <span class="variant-swatch-title">Variant {{ i }}</span>
+        </label>
+      {% endfor %}
     </div>
     <h3 class="product-brand">Good Brand Company</h3>
     <h3 class="product-name">Plain T-Shirt</h3>
