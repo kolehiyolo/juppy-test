@@ -46,49 +46,102 @@
     </div>
     <h3 class="product-brand">Good Brand Company</h3>
     <h3 class="product-name">Plain T-Shirt</h3>
-    <p class="product-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit doloribus voluptatum quas obcaecati assumenda incidunt odit, voluptatibus eligendi praesentium cumque recusandae. Sunt, in iure. Eos ut fuga non dolorum laudantium.</p>
     <div class="price">
       <span class="original">$29.50</span>
       <span class="discounted">$20.00</span>
-      <span class="discount">32% off!</span>
     </div>
   </div>
 </div>
 
 {% stylesheet %}
-  .image {
-    position: relative;
-    display: inline-block;
+  .product {
+    padding: 27px;
+    background-color: white;
 
-    .product-image {
-      display: block;
-      width: 100%;
-      height: auto;
+    .image {
+      position: relative;
+      display: inline-block;
+      border: solid 1px #E8E8E8;
+      border-radius: 20px;
 
-      &.hover {
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-      }
-    }
-
-    &:hover {
       .product-image {
+        display: block;
+        width: 100%;
+        height: auto;
+
         &.hover {
-          opacity: 1;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: opacity 0.3s ease;
+        }
+      }
+
+      &:hover {
+        .product-image {
+          &.hover {
+            opacity: 1;
+          }
+
+          &.default {
+            opacity: 0;
+          }
+        }
+      }
+
+      .badge-sale {
+        color: red;
+        font-weight: 600;
+        font-size: 16px;
+        background-color: white;
+        border: solid 1px red;
+        border-radius: 16px;
+        padding: 6.4px 12.8px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+      }
+    }
+
+    .info { 
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+
+      .variant-swatches {
+        .variant-swatch {
+          background-color: var(--swatch-color);
+        }
+      }
+
+      .product-brand {
+        font-weight: 400;
+        font-size: 14px;
+      }
+
+      .product-name {
+        color: #0A4874;
+        font-size: 16px;
+        font-weight: 600;
+      }
+
+      .price {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        font-size: 14px;
+
+        .original {
+          text-decoration: line-through;
+          color: #111111;
         }
 
-        &.default {
-          opacity: 0;
+        .discounted {
+          color: red;
         }
       }
     }
-  }
-
-  .variant-swatch {
-    background-color: var(--swatch-color);
   }
 {% endstylesheet %}
 

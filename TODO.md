@@ -8,11 +8,12 @@ Style test-section with CSS
 - User can change image on hover
 Render product-card MVP with placeholders
 Variant swatches rendering from arrays
+Style product-card with CSS
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Style product-card with CSS
+Style variant swatches
 
 <!-- @ PAUSED -->
 
