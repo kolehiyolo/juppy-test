@@ -1,2 +1,2 @@
-Style variant swatches
-- .variant-swatches styled now as per Figma design
+Add gap between .top and .bottom
+- set .product to be a column flexbox with 15px gap
