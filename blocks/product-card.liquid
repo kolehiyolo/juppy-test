@@ -3,6 +3,9 @@
   Uses placeholder content for now
 {% enddoc %}
 
+{% assign variant_names = "Orange,Green,Blue,Yellow,Pink,Navy Blue" | split: "," %}
+{% assign variant_hexes = "#ff6633,#006600,#00639c,#fce78d,#ffccff,#19264b" | split: "," %}
+
 <div class="product">
   <div class="image">
     <img
@@ -25,16 +28,19 @@
   </div>
   <div class="info">
     <div class="variant-swatches">
-      {% for i in (1..6) %}
-        <label class="variant-swatch swatch-{{ i }}">
+      {% for name in variant_names %}
+        {% assign hex = variant_hexes[forloop.index0] %}
+        <label
+          class="variant-swatch swatch-{{ name | handle }}"
+          style="--swatch-color: {{ hex }};">
           <input
             type="radio"
             name="radio-{{ block.id }}"
-            value="swatch-{{ i }}"
+            value="{{ name | handle }}"
             class="variant-swatch-input"
             {% if forloop.first %}checked{% endif %}
           >
-          <span class="variant-swatch-title">Variant {{ i }}</span>
+          <span class="variant-swatch-title">{{ name }}</span>
         </label>
       {% endfor %}
     </div>
@@ -79,6 +85,10 @@
         }
       }
     }
+  }
+
+  .variant-swatch {
+    background-color: var(--swatch-color);
   }
 {% endstylesheet %}
 

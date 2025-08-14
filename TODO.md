@@ -7,6 +7,7 @@ Style test-section with CSS
 - variant-swatch radio selection is isolated to each product
 - User can change image on hover
 Render product-card MVP with placeholders
+Variant swatches rendering from arrays
 
 <!-- ! WHAT WAS I DOING??? -->
 
