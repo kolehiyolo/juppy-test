@@ -5,10 +5,13 @@ Style test-section with CSS
 - Add placeholders
 - variant-swatches is radio selection
 - variant-swatch radio selection is isolated to each product
+- User can change image on hover
+
+<!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
 Render product-card MVP with placeholders
-- User can change image on hover
+- On-hover image is contained in .image regardless of dimensions
 
 <!-- @ PAUSED -->
 

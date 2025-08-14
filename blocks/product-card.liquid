@@ -5,7 +5,20 @@
 
 <div class="product">
   <div class="image">
-    <img src="{{ 'shoppy-x-ray.svg' | asset_url }}" width="300" height="300">
+    <img
+      src="{{ 'img-placeholder-default.png' | asset_url }}"
+      alt="Plain T-Shirt default view"
+      class="product-image default"
+      width="300"
+      height="300"
+    >
+    <img
+      src="{{ 'img-placeholder-hover.png' | asset_url }}"
+      alt="Plain T-Shirt hover view"
+      class="product-image hover"
+      width="300"
+      height="300"
+    >
     <div class="badge-sale">
       <p>On Sale!</p>
     </div>
@@ -37,7 +50,36 @@
 </div>
 
 {% stylesheet %}
+  .image {
+    position: relative;
+    display: inline-block;
 
+    .product-image {
+      display: block;
+      width: 100%;
+      height: auto;
+
+      &.hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+    }
+
+    &:hover {
+      .product-image {
+        &.hover {
+          opacity: 1;
+        }
+
+        &.default {
+          opacity: 0;
+        }
+      }
+    }
+  }
 {% endstylesheet %}
 
 {% schema %}
