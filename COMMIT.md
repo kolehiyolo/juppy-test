@@ -1,2 +1,2 @@
-Add gap between .top and .bottom
-- set .product to be a column flexbox with 15px gap
+product-card pulls in product data
+- tested this by outputting the custom.brand property to .product-card, and it works

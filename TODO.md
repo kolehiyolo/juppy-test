@@ -12,18 +12,17 @@ Style product-card with CSS
 .variant-swatches and .info wrapped inside .bottom
 Create .top wrapper
 Style variant swatches
+Add gap between .top and .bottom
+product-card pulls in product data
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Add gap between .top and .bottom
+Replace placeholders with live data
 
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-On-hover image is contained in .image regardless of dimensions
-Replace placeholders with live data
-
 Customizer can change variant swatch shape
 Customizer can toggle 'x%' off discount badge
 Customizer can add and edit a heading to test-section
@@ -36,7 +35,6 @@ Style product-card with tailwind
 Refactor for image optimization
 
 Check responsiveness
-
 
 <!-- ! BUGS -->
 

@@ -3,6 +3,7 @@
   Uses placeholder content for now
 {% enddoc %}
 
+{% assign product = block.settings.product %}
 {% assign variant_names = "Orange,Green,Blue,Yellow,Pink,Navy Blue" | split: "," %}
 {% assign variant_hexes = "#ff6633,#006600,#00639c,#fce78d,#ffccff,#19264b" | split: "," %}
 
@@ -47,7 +48,7 @@
       {% endfor %}
     </div>
     <div class="info">
-      <h3 class="product-brand">Good Brand Company</h3>
+      <h3 class="product-brand">{{ product.metafields.custom.brand }}</h3>
       <h3 class="product-name">Plain T-Shirt</h3>
       <div class="price">
         <span class="original">$29.50</span>
@@ -192,6 +193,11 @@
 {
   "name": "Product Card",
   "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Select product"
+    }
   ],
   "presets": [
     { "name": "Product Card" }
