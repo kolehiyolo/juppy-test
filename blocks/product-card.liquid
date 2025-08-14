@@ -119,8 +119,33 @@
       gap: 15px;
 
       .variant-swatches {
+        display: flex;
+        gap: 8px;
+
         .variant-swatch {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
           background-color: var(--swatch-color);
+          border-radius: 50%;
+          cursor: pointer;
+          position: relative;
+        }
+
+        /* Hide default radio input and label */
+        .variant-swatch-input,
+        .variant-swatch-title {
+          opacity: 0;
+          position: absolute;
+          inset: 0;
+          cursor: pointer;
+        }
+
+        /* Selected state */
+        .variant-swatch-input:checked + .variant-swatch,
+        .variant-swatch:has(input:checked) {
+          outline: 1px solid #0A4874;
+          outline-offset: 2px;
         }
       }
 

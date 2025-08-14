@@ -11,11 +11,12 @@ Variant swatches rendering from arrays
 Style product-card with CSS
 .variant-swatches and .info wrapped inside .bottom
 Create .top wrapper
+Style variant swatches
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Style variant swatches
+Add gap between .top and .bottom
 
 <!-- @ PAUSED -->
 
@@ -47,3 +48,4 @@ test-section only accepts product-card blocks
 Render test-template MVP
 Style test-template with CSS
 Style test-template with tailwind
+Variant swatches show label on hover
