@@ -1,3 +1,4 @@
-Wrapping content in .bottom
-- Following the Figma prototype, I'm nesting the content in .top and .bottom wrappers
-- .bottom consists of .variant-swatches and .info, similar to the Figma layers
+Create .top wrapper
+- Wrapped .image and .badge-sale inside .top
+- .badge-sale is now outside of .image, which makes better sense anyways
+- .image contains the actual images to be used

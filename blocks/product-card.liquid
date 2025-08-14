@@ -7,21 +7,23 @@
 {% assign variant_hexes = "#ff6633,#006600,#00639c,#fce78d,#ffccff,#19264b" | split: "," %}
 
 <div class="product">
-  <div class="image">
-    <img
-      src="{{ 'img-placeholder-default.png' | asset_url }}"
-      alt="Plain T-Shirt default view"
-      class="product-image default"
-      width="300"
-      height="300"
-    >
-    <img
-      src="{{ 'img-placeholder-hover.png' | asset_url }}"
-      alt="Plain T-Shirt hover view"
-      class="product-image hover"
-      width="300"
-      height="300"
-    >
+  <div class="top">
+    <div class="image">
+      <img
+        src="{{ 'img-placeholder-default.png' | asset_url }}"
+        alt="Plain T-Shirt default view"
+        class="product-image default"
+        width="300"
+        height="300"
+      >
+      <img
+        src="{{ 'img-placeholder-hover.png' | asset_url }}"
+        alt="Plain T-Shirt hover view"
+        class="product-image hover"
+        width="300"
+        height="300"
+      >
+    </div>
     <div class="badge-sale">
       <p>On Sale!</p>
     </div>
@@ -60,34 +62,39 @@
     padding: 27px;
     background-color: white;
 
-    .image {
+    .top {
       position: relative;
-      display: inline-block;
       border: solid 1px #E8E8E8;
       border-radius: 20px;
+      overflow: hidden;
 
-      .product-image {
-        display: block;
-        width: 100%;
-        height: auto;
+      .image {
+        position: relative;
+        display: inline-block;
 
-        &.hover {
-          position: absolute;
-          top: 0;
-          left: 0;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-        }
-      }
-
-      &:hover {
         .product-image {
-          &.hover {
-            opacity: 1;
-          }
+          display: block;
+          width: 100%;
+          height: auto;
 
-          &.default {
+          &.hover {
+            position: absolute;
+            top: 0;
+            left: 0;
             opacity: 0;
+            transition: opacity 0.3s ease;
+          }
+        }
+
+        &:hover {
+          .product-image {
+            &.hover {
+              opacity: 1;
+            }
+
+            &.default {
+              opacity: 0;
+            }
           }
         }
       }
