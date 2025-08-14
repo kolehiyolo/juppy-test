@@ -26,7 +26,7 @@
       <p>On Sale!</p>
     </div>
   </div>
-  <div class="info">
+  <div class="bottom">
     <div class="variant-swatches">
       {% for name in variant_names %}
         {% assign hex = variant_hexes[forloop.index0] %}
@@ -44,11 +44,13 @@
         </label>
       {% endfor %}
     </div>
-    <h3 class="product-brand">Good Brand Company</h3>
-    <h3 class="product-name">Plain T-Shirt</h3>
-    <div class="price">
-      <span class="original">$29.50</span>
-      <span class="discounted">$20.00</span>
+    <div class="info">
+      <h3 class="product-brand">Good Brand Company</h3>
+      <h3 class="product-name">Plain T-Shirt</h3>
+      <div class="price">
+        <span class="original">$29.50</span>
+        <span class="discounted">$20.00</span>
+      </div>
     </div>
   </div>
 </div>
@@ -104,10 +106,10 @@
       }
     }
 
-    .info { 
+    .bottom {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 15px;
 
       .variant-swatches {
         .variant-swatch {
@@ -115,30 +117,36 @@
         }
       }
 
-      .product-brand {
-        font-weight: 400;
-        font-size: 14px;
-      }
-
-      .product-name {
-        color: #0A4874;
-        font-size: 16px;
-        font-weight: 600;
-      }
-
-      .price {
+      .info { 
         display: flex;
-        flex-direction: row;
-        gap: 8px;
-        font-size: 14px;
+        flex-direction: column;
+        gap: 6px;
 
-        .original {
-          text-decoration: line-through;
-          color: #111111;
+        .product-brand {
+          font-weight: 400;
+          font-size: 14px;
         }
 
-        .discounted {
-          color: red;
+        .product-name {
+          color: #0A4874;
+          font-size: 16px;
+          font-weight: 600;
+        }
+
+        .price {
+          display: flex;
+          flex-direction: row;
+          gap: 8px;
+          font-size: 14px;
+
+          .original {
+            text-decoration: line-through;
+            color: #111111;
+          }
+
+          .discounted {
+            color: red;
+          }
         }
       }
     }

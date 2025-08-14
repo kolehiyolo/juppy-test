@@ -9,8 +9,13 @@ Style test-section with CSS
 Render product-card MVP with placeholders
 Variant swatches rendering from arrays
 Style product-card with CSS
+.variant-swatches and .info wrapped inside .bottom
 
 <!-- ! WHAT WAS I DOING??? -->
+- just need to check then commit .bottom wrapping
+- wrap content in .top
+- style variant swatches
+- do todos
 
 <!-- ? DOING -->
 Style variant swatches
