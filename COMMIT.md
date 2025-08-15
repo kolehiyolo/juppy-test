@@ -1,2 +1,2 @@
-product-card pulls in product data
-- tested this by outputting the custom.brand property to .product-card, and it works
+Show live product name
+- Working now, just pulling product name instead of variant name
