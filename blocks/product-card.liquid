@@ -5,18 +5,29 @@
 
 {% assign product = block.settings.product %}
 
+{% assign image_default = product.selected_or_first_available_variant.featured_image %}
+{% assign image_hover = product.selected_or_first_available_variant.metafields.custom.image_hover %}
+
 <div class="product">
   <div class="top">
     <div class="image">
       <img
-        src="{{ 'img-placeholder-default.png' | asset_url }}"
+        src="{{
+          image_default
+          | default: product.featured_image
+          | image_url: width: 800
+        }}"
         alt="Plain T-Shirt default view"
         class="product-image default"
         width="300"
         height="300"
       >
       <img
-        src="{{ 'img-placeholder-hover.png' | asset_url }}"
+        src="{{
+          image_hover
+          | default: product.featured_image
+          | image_url: width: 800
+        }}"
         alt="Plain T-Shirt hover view"
         class="product-image hover"
         width="300"
@@ -32,8 +43,6 @@
       {% for variant in product.variants %}
         {% assign id = variant.id %}
         {% assign title = variant.title %}
-        {% assign image_default = variant.featured_image.src %}
-        {% assign image_hover = variant.metafields.custom.image_hover | file_url %}
         {% assign swatch_hex = variant.metafields.custom.swatch_hex %}
 
         <label

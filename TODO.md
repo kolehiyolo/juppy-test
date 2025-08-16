@@ -16,6 +16,7 @@ Add gap between .top and .bottom
 product-card pulls in product data
 Show live product name
 Show product variant swatches
+Show product variant image and hover
 
 <!-- ! WHAT WAS I DOING??? -->
 - do replace placeholders with live data
@@ -23,7 +24,6 @@ Show product variant swatches
 
 <!-- ? DOING -->
 Replace placeholders with live data
-- Show product variant image and hover
 - Show product variant prices
 - Show product variant if on sale badge
 
