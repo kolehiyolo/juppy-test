@@ -29,6 +29,7 @@ Customizer can add and edit a heading to test-section
 .settings.variant_swatch_shape is in test-section
 .settings.show_discount_percentage is in section level
 Section head and body must have gap
+All product-card must have same height
 
 <!-- ! WHAT WAS I DOING??? -->
 
@@ -37,7 +38,6 @@ Section head and body must have gap
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-All product-card must have same height
 
 User can change variant
 - CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
