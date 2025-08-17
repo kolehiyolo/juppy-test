@@ -1,22 +1,11 @@
-Switching variants updates prices
-- This is a big commit with lotso important changes
-- For product-card.liquid, the elements that used to only render depending on active_variant properties now show up regardless
-  - That includes .badge-sale, .price-discounted, and .price-discounted-percentage
-  - It used to be that these will only show up specifically if compare_at_price > price, aka if the active variant is on discount
-  - This had to be overhauled for a reason I'll explain in a bit
-- The biggest chunk is of course the variant-swatch.js processing
-  - Fetches the comparePrice and actualPrice values
-  - Fetches the HTML DOM of .price-original, .price-discounted, .price-discounted-percentage, and .badge-sale
-  - Checks to see if there's a discount
-    - If yes
-      - We update .price-original content and add the .discounted class, which adds a strike-through to the text
-      - We update .price-discounted content
-      - We calculate for discountPercentage and update .price-discounted-percentage content
-      - We remove .hidden class from badgeSale, which means the badgeSale will show up
-    - Otherwise
-      - We update .price-original content and remove the .discounted class, so no more strike-through
-      - We leave .price-discounted blank
-      - We leave .price-discounted-percentage blank
-      - We add .hidden class to badgeSale, which means the badgeSale will no longer show up
-- So the reason why the elements had to show up on liquid render is there may be products that have a combination of variants where some are discounted and some aren't, so this solution accommodates those scenarios by leaving the elements in, regardless if they're gonna be empty
-- Finally, Shopify.formatMoney() is the one suggested by the scripts I found online and by GPT as a JS alternative to money filter, but of course that doesn't work cuz my JS doesn't know where to get that function, so I had GPT create a good enough formatMoney() function script, and had it imported as a JS file
+Install Tailwind
+- Bruh it worked after so much finagling
+- Things done:
+  - Installed tailwind and tailwind-cli via NPM
+  - Created a concurrently script that runs both "shopify theme dev" and the --watch command that processes tailwind.input.css into tailwind.output.css
+  - Linked tailwind.output.css to theme.liquid as a stylesheet
+  - Included node stuff in .shopifyignore
+  - To test if it's working, I remade .badge-sale to use tailwind classes and omitted the CSS entirely
+- I also set up a shopify.theme.toml file, so I can apparently run a development environment for the theme, but I just did it cuz the tutorial I followed did it lol
+  - I honestly am not privy yet to the importance of setting up development environments, but I can kinda imagine a vague sense of the use cases
+  - I'm keeping it for now

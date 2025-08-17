@@ -15,3 +15,7 @@
 COMMIT.md
 TODO.md
 BRAINDUMP.md
+
+package.json
+package-lock.json
+node_modules

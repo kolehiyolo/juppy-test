@@ -52,11 +52,11 @@
       >
     </div>
     {% if active_variant.compare_at_price > active_variant.price %}
-      <div class="badge-sale">
+      <div class="badge-sale absolute top-5 left-5 text-red-600 font-semibold text-base bg-white border border-red-600 rounded-full px-3 py-1.5">
         <p>On Sale!</p>
       </div>
     {% else %}
-      <div class="badge-sale hidden">
+      <div class="badge-sale absolute top-5 left-5 text-red-600 font-semibold text-base bg-white border border-red-600 rounded-full px-3 py-1.5 hidden">
         <p>On Sale!</p>
       </div>
     {% endif %}
@@ -151,23 +151,6 @@
               opacity: 0;
             }
           }
-        }
-      }
-
-      .badge-sale {
-        color: red;
-        font-weight: 600;
-        font-size: 16px;
-        background-color: white;
-        border: solid 1px red;
-        border-radius: 16px;
-        padding: 6.4px 12.8px;
-        position: absolute;
-        top: 20px;
-        left: 20px;
-
-        &.hidden {
-          display: none;
         }
       }
     }
