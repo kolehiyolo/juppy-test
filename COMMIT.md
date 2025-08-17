@@ -1,2 +1,3 @@
-Style product name & brand
-- product-card is massive so we're committing one tiny chunk at a time
+Style prices
+- Another straightforward translation
+- A caveat is that GPT removes the original class names that I gave, which isn't ideal especially for when doing client-side JS jutsus

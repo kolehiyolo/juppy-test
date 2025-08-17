@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (comparePrice > actualPrice) {
         // Update prices
         priceOriginal.innerHTML = `${formatMoney(comparePrice)}`;
-        priceOriginal.classList.add("discounted");
+        priceOriginal.classList.add("line-through");
         badgeSale.classList.remove("hidden");
 
         priceDiscounted.innerHTML = `${formatMoney(actualPrice)}`;
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         // No discount, just show actual
         priceOriginal.innerHTML = `${formatMoney(actualPrice)}`;
-        priceOriginal.classList.remove("discounted");
+        priceOriginal.classList.remove("line-through");
         badgeSale.classList.add("hidden");
         
         // Clear discounted values if they exist

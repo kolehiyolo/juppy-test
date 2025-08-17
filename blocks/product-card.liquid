@@ -85,27 +85,27 @@
       </div>
     {% endif %}
     <div class="info">
-      <h3 class="text-sm font-normal">
+      <h3 class="product-brand text-sm font-normal">
         {{ product.metafields.custom.brand }}
       </h3>
-      <h3 class="text-base font-semibold text-[#0A4874]">
+      <h3 class="product-name text-base font-semibold text-[#0A4874]">
         {{ product.title }}
       </h3>
-      <div class="price">
+      <div class="price flex flex-row gap-2 text-sm">
         {% if active_variant.compare_at_price > active_variant.price %}
-          <span class="price-original discounted">{{ active_variant.compare_at_price | money }}</span>
-          <span class="price-discounted">{{ active_variant.price | money }}</span>
+          <span class="price-original text-[#111111] line-through">{{ active_variant.compare_at_price | money }}</span>
+          <span class="price-discounted text-red-600">{{ active_variant.price | money }}</span>
           {% if section.settings.show_discount_percentage %}
             {% assign savings = active_variant.compare_at_price | minus: active_variant.price %}
             {% assign discount_percentage = savings | times: 100 | divided_by: active_variant.compare_at_price %}
-            <span class="price-discounted-percentage">{{ discount_percentage }}% off</span>
+            <span class="price-discounted-percentage text-red-600">{{ discount_percentage }}% off</span>
           {% else %}
             <span class="price-discounted-percentage"></span>
           {% endif %}
         {% else %}
-          <span class="price-original">{{ active_variant.compare_at_price | money }}</span>
-          <span class="price-discounted"></span>
-          <span class="price-discounted-percentage"></span>
+          <span class="price-original text-[#111111]">{{ active_variant.compare_at_price | money }}</span>
+          <span class="price-discounted text-red-600"></span>
+          <span class="price-discounted-percentage text-red-600"></span>
         {% endif %}
       </div>
     </div>
@@ -206,29 +206,6 @@
         display: flex;
         flex-direction: column;
         gap: 6px;
-
-        .price {
-          display: flex;
-          flex-direction: row;
-          gap: 8px;
-          font-size: 14px;
-
-          .price-original {
-            color: #111111;
-            
-            &.discounted { 
-              text-decoration: line-through;
-            }
-          }
-
-          .price-discounted {
-            color: red;
-          }
-
-          .price-discounted-percentage {
-            color: red;
-          }
-        }
       }
     }
   }

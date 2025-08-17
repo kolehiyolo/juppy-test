@@ -37,6 +37,7 @@ Install Tailwind
 Style test-section with tailwind  
 Style section title
 Style product name & brand
+Style prices
 
 <!-- ! WHAT WAS I DOING??? -->
 
