@@ -18,6 +18,7 @@ Show live product name
 Show product variant swatches
 Show product variant image and hover
 Referencing active_variant for all variant data
+Show product variant prices
 
 
 <!-- ! WHAT WAS I DOING??? -->
@@ -26,8 +27,9 @@ Referencing active_variant for all variant data
 
 <!-- ? DOING -->
 Replace placeholders with live data
-- Show product variant prices
-- Show product variant if on sale badge
+- Dynamic sale badge
+- Dynamic price showing
+- variant-swatches show only if variants exist
 
 <!-- @ PAUSED -->
 
