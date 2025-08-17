@@ -64,8 +64,12 @@
       <h3 class="product-brand">{{ product.metafields.custom.brand }}</h3>
       <h3 class="product-name">{{ product.title }}</h3>
       <div class="price">
-        <span class="original">{{ active_variant.compare_at_price | money }}</span>
-        <span class="discounted">{{ active_variant.price | money }}</span>
+        {% if active_variant.compare_at_price > active_variant.price %}
+          <span class="price-original discounted">{{ active_variant.compare_at_price | money }}</span>
+          <span class="price-discounted">{{ active_variant.price | money }}</span>
+        {% else %}
+          <span class="price-original">{{ active_variant.compare_at_price | money }}</span>
+        {% endif %}
       </div>
     </div>
   </div>
@@ -188,12 +192,15 @@
           gap: 8px;
           font-size: 14px;
 
-          .original {
-            text-decoration: line-through;
+          .price-original {
             color: #111111;
+            
+            &.discounted { 
+              text-decoration: line-through;
+            }
           }
 
-          .discounted {
+          .price-discounted {
             color: red;
           }
         }
