@@ -30,6 +30,7 @@ Customizer can add and edit a heading to test-section
 .settings.show_discount_percentage is in section level
 Section head and body must have gap
 All product-card must have same height
+Switching variants is recognized
 
 <!-- ! WHAT WAS I DOING??? -->
 
@@ -38,7 +39,6 @@ All product-card must have same height
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-
 User can change variant
 - CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
 
