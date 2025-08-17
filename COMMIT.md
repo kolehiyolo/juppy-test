@@ -1,11 +1,4 @@
-Install Tailwind
-- Bruh it worked after so much finagling
-- Things done:
-  - Installed tailwind and tailwind-cli via NPM
-  - Created a concurrently script that runs both "shopify theme dev" and the --watch command that processes tailwind.input.css into tailwind.output.css
-  - Linked tailwind.output.css to theme.liquid as a stylesheet
-  - Included node stuff in .shopifyignore
-  - To test if it's working, I remade .badge-sale to use tailwind classes and omitted the CSS entirely
-- I also set up a shopify.theme.toml file, so I can apparently run a development environment for the theme, but I just did it cuz the tutorial I followed did it lol
-  - I honestly am not privy yet to the importance of setting up development environments, but I can kinda imagine a vague sense of the use cases
-  - I'm keeping it for now
+Style test-section with tailwind  
+- Alright so I had GPT's help just do a direct translation from liquid+html+css into liquid+html+tailwind
+- It worked pretty much almost 1 to 1
+- The only exception is tailwind apparently can't replicate using CSS variables, at least not for grid stuff, maybe

@@ -34,11 +34,11 @@ Switching variants is recognized
 Switching variants updates prices
 User can change variant
 Install Tailwind
+Style test-section with tailwind  
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Style test-section with tailwind  
 Style product-card with tailwind
 
 <!-- @ PAUSED -->
