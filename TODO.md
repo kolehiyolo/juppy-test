@@ -36,6 +36,7 @@ User can change variant
 Install Tailwind
 Style test-section with tailwind  
 Style section title
+Style product name & brand
 
 <!-- ! WHAT WAS I DOING??? -->
 

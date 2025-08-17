@@ -85,8 +85,12 @@
       </div>
     {% endif %}
     <div class="info">
-      <h3 class="product-brand">{{ product.metafields.custom.brand }}</h3>
-      <h3 class="product-name">{{ product.title }}</h3>
+      <h3 class="text-sm font-normal">
+        {{ product.metafields.custom.brand }}
+      </h3>
+      <h3 class="text-base font-semibold text-[#0A4874]">
+        {{ product.title }}
+      </h3>
       <div class="price">
         {% if active_variant.compare_at_price > active_variant.price %}
           <span class="price-original discounted">{{ active_variant.compare_at_price | money }}</span>
@@ -202,17 +206,6 @@
         display: flex;
         flex-direction: column;
         gap: 6px;
-
-        .product-brand {
-          font-weight: 400;
-          font-size: 14px;
-        }
-
-        .product-name {
-          color: #0A4874;
-          font-size: 16px;
-          font-weight: 600;
-        }
 
         .price {
           display: flex;

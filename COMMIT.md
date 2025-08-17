@@ -1,2 +1,2 @@
-Style section title
-- Just made it way bolder and stronger than Tailwind's default of just totally toning it down
+Style product name & brand
+- product-card is massive so we're committing one tiny chunk at a time
