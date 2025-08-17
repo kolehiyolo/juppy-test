@@ -69,6 +69,11 @@
         {% if active_variant.compare_at_price > active_variant.price %}
           <span class="price-original discounted">{{ active_variant.compare_at_price | money }}</span>
           <span class="price-discounted">{{ active_variant.price | money }}</span>
+          {% if block.settings.show_discount_percentage %}
+            {% assign savings = active_variant.compare_at_price | minus: active_variant.price %}
+            {% assign discount_percentage = savings | times: 100 | divided_by: active_variant.compare_at_price %}
+            <span class="price-discounted-percentage">{{ discount_percentage }}% off</span>
+          {% endif %}
         {% else %}
           <span class="price-original">{{ active_variant.compare_at_price | money }}</span>
         {% endif %}
@@ -212,6 +217,10 @@
           .price-discounted {
             color: red;
           }
+
+          .price-discounted-percentage {
+            color: red;
+          }
         }
       }
     }
@@ -236,6 +245,12 @@
         { "value": "square", "label": "Square" }
       ],
       "default": "circle"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_discount_percentage",
+      "label": "Show discount 'x% off'",
+      "default": true
     }
   ],
   "presets": [

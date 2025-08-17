@@ -23,17 +23,18 @@ Sale badge shows when applicable
 Discounted prices show when applicable
 variant-swatches show only if variants exist
 Replace placeholders with live data
+Customizer can change variant swatch shape
+Customizer can toggle 'x%' off discount badge
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Customizer can change variant swatch shape
+Customizer can add and edit a heading to test-section
 
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-Customizer can toggle 'x%' off discount badge
-Customizer can add and edit a heading to test-section
+Apply customizaters to section level
 
 User can change variant
 - CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
