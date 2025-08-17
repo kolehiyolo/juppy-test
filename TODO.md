@@ -33,19 +33,19 @@ All product-card must have same height
 Switching variants is recognized
 Switching variants updates prices
 User can change variant
+Install Tailwind
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
+Style test-section with tailwind  
+Style product-card with tailwind
 
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-Style test-section with tailwind
-Style product-card with tailwind
 
 Refactor for image optimization
-
 Check responsiveness
 
 <!-- ! BUGS -->
@@ -53,7 +53,6 @@ Check responsiveness
 <!-- ? SANITY REFACTORING -->
 
 <!-- @ BONUS -->
-Remove section title
 test-section only accepts product-card blocks
 Render test-template MVP
 Style test-template with CSS
