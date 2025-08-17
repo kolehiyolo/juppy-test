@@ -1,4 +1,2 @@
-Show product variant image and hover
-- Tested by switching the order of the variants in the product manager
-- This for now only shows the first variant by default
-- Took a while to figure out how to properly fetch the data and assign to a variable
+Referencing active_variant for all variant data
+- For ease of use and so we don't have too many variables, I'm using active_variant as a catch-all object that houses the active variant data, including images, name, prices, etc

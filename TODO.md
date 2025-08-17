@@ -17,6 +17,8 @@ product-card pulls in product data
 Show live product name
 Show product variant swatches
 Show product variant image and hover
+Referencing active_variant for all variant data
+
 
 <!-- ! WHAT WAS I DOING??? -->
 - do replace placeholders with live data
