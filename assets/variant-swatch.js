@@ -15,17 +15,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const variantId = radio.value;
       const selectedVariant = variantsData.find(v => v.id == variantId);
       if (!selectedVariant) return;
-      console.log(selectedVariant);
 
       // * Update content on input change
-      // Update .product-image.default
-      const defaultImg = wrapper.querySelector(".product-image.default");
+      // Update .product-image-default
+      const defaultImg = wrapper.querySelector(".product-image-default");
       if (selectedVariant.featured_image) {
         defaultImg.src = selectedVariant.featured_image;
       }
 
-      // Update .product-image.hover
-      const hoverImg = wrapper.querySelector(".product-image.hover");
+      // Update .product-image-hover
+      const hoverImg = wrapper.querySelector(".product-image-hover");
       if (selectedVariant.metafields.custom.image_hover) {
         hoverImg.src = selectedVariant.metafields.custom.image_hover;
       }
