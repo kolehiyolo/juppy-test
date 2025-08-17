@@ -28,6 +28,7 @@ Customizer can toggle 'x%' off discount badge
 Customizer can add and edit a heading to test-section
 .settings.variant_swatch_shape is in test-section
 .settings.show_discount_percentage is in section level
+Section head and body must have gap
 
 <!-- ! WHAT WAS I DOING??? -->
 
@@ -36,7 +37,6 @@ Customizer can add and edit a heading to test-section
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-Section head and body must have gap
 All product-card must have same height
 
 User can change variant
