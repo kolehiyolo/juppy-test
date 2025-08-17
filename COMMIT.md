@@ -1,3 +1,2 @@
-Customizer can toggle 'x%' off discount badge
-- Just added the simple conditional snippet, calculating the percentage off the 2 price variables
-- Added relevant styling and schema
+Customizer can add and edit a heading to test-section
+- Simple enough, I just made sure to add the ability to toggle the title on/off

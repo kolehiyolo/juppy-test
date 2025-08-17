@@ -8,9 +8,11 @@
 
 <div class="test-section full-width">
   <div class="content">
-    <div class="head">
-      <h1>Test Section</h1>
-    </div>
+    {% if section.settings.show_section_title %}
+      <div class="head">
+        <h1>{{ section.settings.section_title }}</h1>
+      </div>
+    {% endif %}
     <div class="body">
       <div class="products">
         {% content_for 'blocks' %}
@@ -63,7 +65,20 @@
 {% schema %}
 {
   "name": "Test Section",
-  "settings": [],
+  "settings": [
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Section title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section_title",
+      "label": "Show section title",
+      "default": true
+    }
+  ],
   "max_blocks": 3,
   "blocks": [
     {

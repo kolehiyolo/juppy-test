@@ -25,16 +25,18 @@ variant-swatches show only if variants exist
 Replace placeholders with live data
 Customizer can change variant swatch shape
 Customizer can toggle 'x%' off discount badge
+Customizer can add and edit a heading to test-section
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Customizer can add and edit a heading to test-section
 
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-Apply customizaters to section level
+Apply customizers to section level
+Section head and body must have gap
+All product-card must have same height
 
 User can change variant
 - CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
