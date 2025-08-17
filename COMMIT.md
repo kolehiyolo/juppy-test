@@ -1,2 +1,3 @@
-Customizer can add and edit a heading to test-section
-- Simple enough, I just made sure to add the ability to toggle the title on/off
+.settings.variant_swatch_shape is in section level
+- Wow I didn't expect it to be that seamless
+- Just moved the setting to the section level and updated the call from block.settings.... to section.settings....

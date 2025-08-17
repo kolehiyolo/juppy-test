@@ -30,11 +30,11 @@ Customizer can add and edit a heading to test-section
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
+.settings.variant_swatch_shape is in test-section
 
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-Apply customizers to section level
 Section head and body must have gap
 All product-card must have same height
 

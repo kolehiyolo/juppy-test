@@ -41,7 +41,7 @@
   </div>
   <div class="bottom">
     {% if product.variants.size > 1 %}
-      <div class="variant-swatches swatch-{{ block.settings.variant_swatch_shape }}">
+      <div class="variant-swatches swatch-{{ section.settings.variant_swatch_shape }}">
         {% for variant in product.variants %}
           {% assign id = variant.id %}
           {% assign title = variant.title %}
@@ -235,16 +235,6 @@
       "type": "product",
       "id": "product",
       "label": "Select product"
-    },
-    {
-      "type": "select",
-      "id": "variant_swatch_shape",
-      "label": "Variant Swatch shape",
-      "options": [
-        { "value": "circle", "label": "Circle" },
-        { "value": "square", "label": "Square" }
-      ],
-      "default": "circle"
     },
     {
       "type": "checkbox",
