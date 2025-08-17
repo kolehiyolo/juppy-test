@@ -20,15 +20,17 @@ Show product variant image and hover
 Referencing active_variant for all variant data
 Show product variant prices
 Sale badge shows when applicable
+Discounted prices show when applicable
+variant-swatches show only if variants exist
+Replace placeholders with live data
 
 <!-- ! WHAT WAS I DOING??? -->
 - do replace placeholders with live data
 - CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
 
 <!-- ? DOING -->
-Replace placeholders with live data
-- Discounted prices show when applicable
-- variant-swatches show only if variants exist
+
+
 
 <!-- @ PAUSED -->
 

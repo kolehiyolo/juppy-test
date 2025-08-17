@@ -40,26 +40,28 @@
     {% endif %}
   </div>
   <div class="bottom">
-    <div class="variant-swatches">
-      {% for variant in product.variants %}
-        {% assign id = variant.id %}
-        {% assign title = variant.title %}
-        {% assign swatch_hex = variant.metafields.custom.swatch_hex %}
+    {% if product.variants.size > 1 %}
+      <div class="variant-swatches">
+        {% for variant in product.variants %}
+          {% assign id = variant.id %}
+          {% assign title = variant.title %}
+          {% assign swatch_hex = variant.metafields.custom.swatch_hex %}
 
-        <label
-          class="variant-swatch swatch-{{ title | handle }}"
-          style="--swatch-color: {{ swatch_hex }};">
-          <input
-            type="radio"
-            name="radio-{{ block.id }}"
-            value="{{ title | handle }}"
-            class="variant-swatch-input"
-            {% if forloop.first %}checked{% endif %}
-          >
-          <span class="variant-swatch-title">{{ title }}</span>
-        </label>
-      {% endfor %}
-    </div>
+          <label
+            class="variant-swatch swatch-{{ title | handle }}"
+            style="--swatch-color: {{ swatch_hex }};">
+            <input
+              type="radio"
+              name="radio-{{ block.id }}"
+              value="{{ title | handle }}"
+              class="variant-swatch-input"
+              {% if forloop.first %}checked{% endif %}
+            >
+            <span class="variant-swatch-title">{{ title }}</span>
+          </label>
+        {% endfor %}
+      </div>
+    {% endif %}
     <div class="info">
       <h3 class="product-brand">{{ product.metafields.custom.brand }}</h3>
       <h3 class="product-name">{{ product.title }}</h3>
