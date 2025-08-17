@@ -41,7 +41,7 @@
   </div>
   <div class="bottom">
     {% if product.variants.size > 1 %}
-      <div class="variant-swatches">
+      <div class="variant-swatches swatch-{{ block.settings.variant_swatch_shape }}">
         {% for variant in product.variants %}
           {% assign id = variant.id %}
           {% assign title = variant.title %}
@@ -150,7 +150,6 @@
           width: 20px;
           height: 20px;
           background-color: var(--swatch-color);
-          border-radius: 50%;
           cursor: pointer;
           position: relative;
         }
@@ -169,6 +168,14 @@
         .variant-swatch:has(input:checked) {
           outline: 1px solid #0A4874;
           outline-offset: 2px;
+        }
+
+        &.swatch-circle .variant-swatch {
+          border-radius: 50%;
+        }
+
+        &.swatch-square .variant-swatch {
+          border-radius: 10%;
         }
       }
 
@@ -219,6 +226,16 @@
       "type": "product",
       "id": "product",
       "label": "Select product"
+    },
+    {
+      "type": "select",
+      "id": "variant_swatch_shape",
+      "label": "Variant Swatch shape",
+      "options": [
+        { "value": "circle", "label": "Circle" },
+        { "value": "square", "label": "Square" }
+      ],
+      "default": "circle"
     }
   ],
   "presets": [

@@ -25,21 +25,18 @@ variant-swatches show only if variants exist
 Replace placeholders with live data
 
 <!-- ! WHAT WAS I DOING??? -->
-- do replace placeholders with live data
-- CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
 
 <!-- ? DOING -->
-
-
+Customizer can change variant swatch shape
 
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-Customizer can change variant swatch shape
 Customizer can toggle 'x%' off discount badge
 Customizer can add and edit a heading to test-section
 
 User can change variant
+- CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
 
 Style test-section with tailwind
 Style product-card with tailwind
