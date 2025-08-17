@@ -1,3 +1,2 @@
-.settings.variant_swatch_shape is in section level
-- Wow I didn't expect it to be that seamless
-- Just moved the setting to the section level and updated the call from block.settings.... to section.settings....
+.show_discount_percentage is in section level
+- Same solution as .variant_swatch_shape in the last commit

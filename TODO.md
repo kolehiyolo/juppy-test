@@ -26,11 +26,12 @@ Replace placeholders with live data
 Customizer can change variant swatch shape
 Customizer can toggle 'x%' off discount badge
 Customizer can add and edit a heading to test-section
+.settings.variant_swatch_shape is in test-section
+.settings.show_discount_percentage is in section level
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-.settings.variant_swatch_shape is in test-section
 
 <!-- @ PAUSED -->
 
