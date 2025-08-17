@@ -38,11 +38,12 @@ Style test-section with tailwind
 Style section title
 Style product name & brand
 Style prices
+Style variant-swatches
+Style product-card with tailwind
 
 <!-- ! WHAT WAS I DOING??? -->
 
 <!-- ? DOING -->
-Style product-card with tailwind
 
 <!-- @ PAUSED -->
 
