@@ -29,6 +29,37 @@ document.addEventListener("DOMContentLoaded", () => {
       if (selectedVariant.metafields.custom.image_hover) {
         hoverImg.src = selectedVariant.metafields.custom.image_hover;
       }
+
+      // Update price
+      const comparePrice = selectedVariant.compare_at_price;
+      const actualPrice = selectedVariant.price;
+      const priceOriginal = wrapper.querySelector(".price-original");
+      const priceDiscounted = wrapper.querySelector(".price-discounted");
+      const priceDiscountedPercentage = wrapper.querySelector(".price-discounted-percentage");
+      const badgeSale = wrapper.querySelector(".badge-sale");
+
+      if (comparePrice > actualPrice) {
+        // Update prices
+        priceOriginal.innerHTML = `${formatMoney(comparePrice)}`;
+        priceOriginal.classList.add("discounted");
+        badgeSale.classList.remove("hidden");
+
+        priceDiscounted.innerHTML = `${formatMoney(actualPrice)}`;
+
+        // Calculate discountPercentage
+        const savings = comparePrice - actualPrice;
+        const discountPercentage = Math.round((savings * 100) / comparePrice);
+        priceDiscountedPercentage.innerHTML = `${discountPercentage}% off`;
+      } else {
+        // No discount, just show actual
+        priceOriginal.innerHTML = `${formatMoney(actualPrice)}`;
+        priceOriginal.classList.remove("discounted");
+        badgeSale.classList.add("hidden");
+        
+        // Clear discounted values if they exist
+        priceDiscounted.innerHTML = "";
+        priceDiscountedPercentage.innerHTML = "";
+      }
     });
   });
 });

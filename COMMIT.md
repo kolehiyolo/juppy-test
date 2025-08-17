@@ -1,5 +1,22 @@
-Switching variants is recognized
-- Yey that was rough but now the user can click on the swatches and the theme actually recognizes the variant-switch
-- This was some weird bootstrapping, where we're injecting JSON straight into the HTML, and then the variant-swatch.js script fetches that data so it can process it at the client level to react to the input changes
-- To test that it's working well, the images are now changing as expected
-- The injection itself also required some finagling, as there's no way to inject product.variants WITH the metafields, which is so dumb, so I had to make it so that each product.variants instance has the metafields included, at least just the .custom.image_hover
+Switching variants updates prices
+- This is a big commit with lotso important changes
+- For product-card.liquid, the elements that used to only render depending on active_variant properties now show up regardless
+  - That includes .badge-sale, .price-discounted, and .price-discounted-percentage
+  - It used to be that these will only show up specifically if compare_at_price > price, aka if the active variant is on discount
+  - This had to be overhauled for a reason I'll explain in a bit
+- The biggest chunk is of course the variant-swatch.js processing
+  - Fetches the comparePrice and actualPrice values
+  - Fetches the HTML DOM of .price-original, .price-discounted, .price-discounted-percentage, and .badge-sale
+  - Checks to see if there's a discount
+    - If yes
+      - We update .price-original content and add the .discounted class, which adds a strike-through to the text
+      - We update .price-discounted content
+      - We calculate for discountPercentage and update .price-discounted-percentage content
+      - We remove .hidden class from badgeSale, which means the badgeSale will show up
+    - Otherwise
+      - We update .price-original content and remove the .discounted class, so no more strike-through
+      - We leave .price-discounted blank
+      - We leave .price-discounted-percentage blank
+      - We add .hidden class to badgeSale, which means the badgeSale will no longer show up
+- So the reason why the elements had to show up on liquid render is there may be products that have a combination of variants where some are discounted and some aren't, so this solution accommodates those scenarios by leaving the elements in, regardless if they're gonna be empty
+- Finally, Shopify.formatMoney() is the one suggested by the scripts I found online and by GPT as a JS alternative to money filter, but of course that doesn't work cuz my JS doesn't know where to get that function, so I had GPT create a good enough formatMoney() function script, and had it imported as a JS file

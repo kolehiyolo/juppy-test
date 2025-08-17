@@ -31,6 +31,8 @@ Customizer can add and edit a heading to test-section
 Section head and body must have gap
 All product-card must have same height
 Switching variants is recognized
+Switching variants updates prices
+User can change variant
 
 <!-- ! WHAT WAS I DOING??? -->
 
@@ -39,9 +41,6 @@ Switching variants is recognized
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-User can change variant
-- CHECK HOW SAMPLE THEME DOES THEIR VARIANT SWATCH SWITCHING
-
 Style test-section with tailwind
 Style product-card with tailwind
 
