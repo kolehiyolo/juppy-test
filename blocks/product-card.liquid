@@ -33,9 +33,11 @@
         height="300"
       >
     </div>
-    <div class="badge-sale">
-      <p>On Sale!</p>
-    </div>
+    {% if active_variant.compare_at_price > active_variant.price %}
+      <div class="badge-sale">
+        <p>On Sale!</p>
+      </div>
+    {% endif %}
   </div>
   <div class="bottom">
     <div class="variant-swatches">
