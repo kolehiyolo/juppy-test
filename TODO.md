@@ -35,6 +35,7 @@ Switching variants updates prices
 User can change variant
 Install Tailwind
 Style test-section with tailwind  
+Style section title
 
 <!-- ! WHAT WAS I DOING??? -->
 
@@ -44,7 +45,6 @@ Style product-card with tailwind
 <!-- @ PAUSED -->
 
 <!-- TODO -->
-
 Refactor for image optimization
 Check responsiveness
 
