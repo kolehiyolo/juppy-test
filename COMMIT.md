@@ -1,3 +1,4 @@
-Style prices
-- Another straightforward translation
-- A caveat is that GPT removes the original class names that I gave, which isn't ideal especially for when doing client-side JS jutsus
+Styled non-complex elements
+- I went ahead and tailwind-ed all the containers that are non-complex
+- The complex ones are the hover-image situation and the variant-swatches
+- I want to tackle those 2 in a dedicated commit as they might be too weird

@@ -7,7 +7,7 @@
 
 {% assign active_variant = product.selected_or_first_available_variant %}
 
-<div class="product" data-product-handle="{{ product.handle }}">
+<div class="product p-[27px] bg-white flex flex-col gap-[15px] h-full" data-product-handle="{{ product.handle }}">
   <script type="application/json" data-variants>
     [
       {% for variant in product.variants %}
@@ -25,8 +25,7 @@
       {% endfor %}
     ]
   </script>
-
-  <div class="top">
+  <div class="top relative border border-[#E8E8E8] rounded-[20px] overflow-hidden">
     <div class="image">
       <img
         src="{{
@@ -61,7 +60,7 @@
       </div>
     {% endif %}
   </div>
-  <div class="bottom">
+  <div class="bottom flex flex-col gap-[15px]">
     {% if product.variants.size > 1 %}
       <div class="variant-swatches swatch-{{ section.settings.variant_swatch_shape }}">
         {% for variant in product.variants %}
@@ -84,7 +83,7 @@
         {% endfor %}
       </div>
     {% endif %}
-    <div class="info">
+    <div class="info flex flex-col gap-[6px]">
       <h3 class="product-brand text-sm font-normal">
         {{ product.metafields.custom.brand }}
       </h3>
@@ -114,19 +113,7 @@
 
 {% stylesheet %}
   .product {
-    padding: 27px;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    height: 100%;
-
     .top {
-      position: relative;
-      border: solid 1px #E8E8E8;
-      border-radius: 20px;
-      overflow: hidden;
-
       .image {
         position: relative;
         display: inline-block;
@@ -160,10 +147,6 @@
     }
 
     .bottom {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-
       .variant-swatches {
         display: flex;
         gap: 8px;
@@ -200,12 +183,6 @@
         &.swatch-square .variant-swatch {
           border-radius: 10%;
         }
-      }
-
-      .info { 
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
       }
     }
   }
