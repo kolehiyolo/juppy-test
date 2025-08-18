@@ -12,5 +12,26 @@
   "context": {
     "market": "ph"
   },
-  "sections": {}
+  "sections": {
+    "test": {
+      "settings": {},
+      "blocks": {
+        "product_card_XAz8T4": {
+          "settings": {
+            "product": "shirt"
+          }
+        },
+        "product_card_Verqan": {
+          "settings": {
+            "product": "sale-true-variants-true"
+          }
+        },
+        "product_card_DzFwRJ": {
+          "settings": {
+            "product": "sale-false-variants-false"
+          }
+        }
+      }
+    }
+  }
 }
