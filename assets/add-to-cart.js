@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // Example feedback (replace with your cart UI update)
         console.log("Added to cart:", data);
-        button.textContent = `Added ${variantID}`;
+        button.textContent = `Added ${variantId}`;
         setTimeout(() => (button.textContent = "Add to Cart"), 2000);
 
         // Optionally: trigger a custom event so global cart drawer updates
