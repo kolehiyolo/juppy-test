@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const variantId = selectedInput ? selectedInput.value : null;
 
       if (!variantId) {
+        const wrapper = button.closest(".product");
         const variantsData = JSON.parse(wrapper.querySelector("[data-variants]").textContent);
         const variantId = variantsData[0].id;
         console.log(variantId);
