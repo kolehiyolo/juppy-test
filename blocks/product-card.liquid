@@ -98,84 +98,80 @@
     </div>
   </div>
   <div class="bottom flex flex-col gap-[15px]">
-    <div class="top">
-      {% if product.variants.size > 1 %}
-        <div class="variant-swatches flex gap-2">
-          {% for variant in product.variants %}
-            {% assign id = variant.id %}
-            {% assign title = variant.title %}
-            {% assign swatch_hex = variant.metafields.custom.swatch_hex %}
+    {% if product.variants.size > 1 %}
+      <div class="variant-swatches flex gap-2">
+        {% for variant in product.variants %}
+          {% assign id = variant.id %}
+          {% assign title = variant.title %}
+          {% assign swatch_hex = variant.metafields.custom.swatch_hex %}
 
-            <label
-              class="variant-swatch swatch-{{ title | handle }} relative"
+          <label
+            class="variant-swatch swatch-{{ title | handle }} relative"
+          >
+            <input
+              type="radio"
+              name="radio-{{ block.id }}"
+              value="{{ variant.id }}"
+              class="variant-swatch-input peer absolute inset-0 opacity-0 cursor-pointer"
+              {% if forloop.first %}checked{% endif %}
             >
-              <input
-                type="radio"
-                name="radio-{{ block.id }}"
-                value="{{ variant.id }}"
-                class="variant-swatch-input peer absolute inset-0 opacity-0 cursor-pointer"
-                {% if forloop.first %}checked{% endif %}
-              >
-              <span
-                class="block w-5 h-5 cursor-pointer
-                  {% if section.settings.variant_swatch_shape == 'circle' %}rounded-full{% endif %}
-                  {% if section.settings.variant_swatch_shape == 'square' %}rounded-md{% endif %}
-                "
-                style="background-color: {{ swatch_hex }};">
-              </span>
-              <span class="variant-swatch-title sr-only">{{ title }}</span>
-              <span
-                class="pointer-events-none absolute inset-[-4px] border border-transparent peer-checked:border-[#0A4874] peer-checked:border-1
-                  {% if section.settings.variant_swatch_shape == 'circle' %}rounded-full{% endif %}
-                  {% if section.settings.variant_swatch_shape == 'square' %}rounded-md{% endif %}
-                ">
-              </span>
-            </label>
-          {% endfor %}
-        </div>
-      {% endif %}
-      <div class="info flex flex-col gap-[6px]">
-        <p class="product-brand text-sm font-normal">
-          {{ product.metafields.custom.brand }}
-        </p>
-        <h3 class="product-name text-base font-semibold text-[#0A4874]">
-          {{ product.title }}
-        </h3>
-        <div class="price flex flex-row gap-2 text-sm">
-          {% if active_variant.compare_at_price > active_variant.price %}
-            <span class="price-original text-[#111111] line-through">{{ active_variant.compare_at_price | money }}</span>
-            <span class="price-discounted text-red-600">{{ active_variant.price | money }}</span>
-            {% if section.settings.show_discount_percentage %}
-              {% assign savings = active_variant.compare_at_price | minus: active_variant.price %}
-              {% assign discount_percentage = savings | times: 100 | divided_by: active_variant.compare_at_price %}
-              <span class="price-discounted-percentage text-red-600">{{ discount_percentage }}% off</span>
-            {% else %}
-              <span class="price-discounted-percentage"></span>
-            {% endif %}
+            <span
+              class="block w-5 h-5 cursor-pointer
+                {% if section.settings.variant_swatch_shape == 'circle' %}rounded-full{% endif %}
+                {% if section.settings.variant_swatch_shape == 'square' %}rounded-md{% endif %}
+              "
+              style="background-color: {{ swatch_hex }};">
+            </span>
+            <span class="variant-swatch-title sr-only">{{ title }}</span>
+            <span
+              class="pointer-events-none absolute inset-[-4px] border border-transparent peer-checked:border-[#0A4874] peer-checked:border-1
+                {% if section.settings.variant_swatch_shape == 'circle' %}rounded-full{% endif %}
+                {% if section.settings.variant_swatch_shape == 'square' %}rounded-md{% endif %}
+              ">
+            </span>
+          </label>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="info flex flex-col gap-[6px]">
+      <p class="product-brand text-sm font-normal">
+        {{ product.metafields.custom.brand }}
+      </p>
+      <h3 class="product-name text-base font-semibold text-[#0A4874]">
+        {{ product.title }}
+      </h3>
+      <div class="price flex flex-row gap-2 text-sm">
+        {% if active_variant.compare_at_price > active_variant.price %}
+          <span class="price-original text-[#111111] line-through">{{ active_variant.compare_at_price | money }}</span>
+          <span class="price-discounted text-red-600">{{ active_variant.price | money }}</span>
+          {% if section.settings.show_discount_percentage %}
+            {% assign savings = active_variant.compare_at_price | minus: active_variant.price %}
+            {% assign discount_percentage = savings | times: 100 | divided_by: active_variant.compare_at_price %}
+            <span class="price-discounted-percentage text-red-600">{{ discount_percentage }}% off</span>
           {% else %}
-            <span class="price-original text-[#111111]">{{ active_variant.compare_at_price | money }}</span>
-            <span class="price-discounted text-red-600"></span>
-            <span class="price-discounted-percentage text-red-600"></span>
+            <span class="price-discounted-percentage"></span>
           {% endif %}
-        </div>
+        {% else %}
+          <span class="price-original text-[#111111]">{{ active_variant.compare_at_price | money }}</span>
+          <span class="price-discounted text-red-600"></span>
+          <span class="price-discounted-percentage text-red-600"></span>
+        {% endif %}
       </div>
     </div>
-    <div class="bottom">
-      <div class="buttons">
-        <button
-          class="add bg-[#0A4874] text-white px-4 py-2 rounded-md"
-          data-product-id="{{ product.id }}"
-        >
-          Add to Cart
-        </button>
-      </div>
+    <div class="buttons">
+      <button
+        class="add bg-[#0A4874] text-white px-4 py-2 rounded-md"
+        data-product-id="{{ product.id }}"
+      >
+        Add to Cart
+      </button>
     </div>
   </div>
 </div>
 
 {% stylesheet %}
   .bottom {
-    .top {
+    .buttons {
       flex-grow: 1;
     }
   }
