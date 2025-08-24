@@ -97,7 +97,7 @@
       <p>On Sale!</p>
     </div>
   </div>
-  <div class="bottom flex flex-col gap-[15px]">
+  <div class="bottom flex flex-col gap-[15px] grow">
     {% if product.variants.size > 1 %}
       <div class="variant-swatches flex gap-2">
         {% for variant in product.variants %}
@@ -133,7 +133,7 @@
         {% endfor %}
       </div>
     {% endif %}
-    <div class="info flex flex-col gap-[6px]">
+    <div class="info flex flex-col gap-[6px] grow">
       <p class="product-brand text-sm font-normal">
         {{ product.metafields.custom.brand }}
       </p>
@@ -170,13 +170,13 @@
 </div>
 
 {% stylesheet %}
-  .bottom {
+  /* .bottom {
     flex-grow: 1;
 
     .info {
       flex-grow: 1;
     }
-  }
+  } */
 {% endstylesheet %}
 
 {% schema %}
