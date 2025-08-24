@@ -1,6 +1,5 @@
 {% doc %}
   Renders a product-card block.
-  Uses placeholder content for now
 {% enddoc %}
 
 {% assign product = block.settings.product %}
@@ -31,12 +30,32 @@
         src="{{
           active_variant.featured_image
           | default: product.featured_image
-          | image_url: width: 800
+          | image_url: width: 600
         }}"
-        alt="Plain T-Shirt default view"
+        srcset="
+          {{
+            active_variant.featured_image
+            | default: product.featured_image
+            | image_url: width: 300
+          }} 300w,
+          {{
+            active_variant.featured_image
+            | default: product.featured_image
+            | image_url: width: 600
+          }} 600w,
+          {{
+            active_variant.featured_image
+            | default: product.featured_image
+            | image_url: width: 800
+          }} 800w
+        "
+        sizes="(max-width: 640px) 100vw, 300px"
+        alt="{{ product.title | escape }} (default)"
         class="product-image-default block w-full h-auto opacity-100 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
         width="300"
         height="300"
+        loading="lazy"
+        decoding="async"
       >
       <img
         src="{{
@@ -44,25 +63,43 @@
           | default: product.featured_image
           | image_url: width: 800
         }}"
-        alt="Plain T-Shirt hover view"
+        srcset="
+          {{
+            active_variant.metafields.custom.image_hover
+            | default: product.featured_image
+            | image_url: width: 300
+          }} 300w,
+          {{
+            active_variant.metafields.custom.image_hover
+            | default: product.featured_image
+            | image_url: width: 600
+          }} 600w,
+          {{
+            active_variant.metafields.custom.image_hover
+            | default: product.featured_image
+            | image_url: width: 800
+          }} 800w
+        "
+        sizes="(max-width: 640px) 100vw, 300px"
+        alt="{{ product.title | escape }} (hover)"
         class="product-image-hover absolute top-0 left-0 block w-full h-auto opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
         width="300"
         height="300"
+        loading="lazy"
+        decoding="async"
       >
     </div>
-    {% if active_variant.compare_at_price > active_variant.price %}
-      <div class="badge-sale absolute top-5 left-5 text-red-600 font-semibold text-base bg-white border border-red-600 rounded-full px-3 py-1.5">
-        <p>On Sale!</p>
-      </div>
-    {% else %}
-      <div class="badge-sale absolute top-5 left-5 text-red-600 font-semibold text-base bg-white border border-red-600 rounded-full px-3 py-1.5 hidden">
-        <p>On Sale!</p>
-      </div>
-    {% endif %}
+    <div class="badge-sale absolute top-5 left-5 text-red-600 font-semibold text-base bg-white border border-red-600 rounded-full px-3 py-1.5 
+      {% unless active_variant.compare_at_price > active_variant.price %}
+        hidden
+      {% endunless %}
+    ">
+      <p>On Sale!</p>
+    </div>
   </div>
   <div class="bottom flex flex-col gap-[15px]">
     {% if product.variants.size > 1 %}
-      <div class="variant-swatches swatch-{{ section.settings.variant_swatch_shape }} flex gap-2">
+      <div class="variant-swatches flex gap-2">
         {% for variant in product.variants %}
           {% assign id = variant.id %}
           {% assign title = variant.title %}
@@ -70,7 +107,7 @@
 
           <label
             class="variant-swatch swatch-{{ title | handle }} relative"
-            style="--swatch-color: {{ swatch_hex }};">
+          >
             <input
               type="radio"
               name="radio-{{ block.id }}"
@@ -79,21 +116,27 @@
               {% if forloop.first %}checked{% endif %}
             >
             <span
-              class="block w-5 h-5 cursor-pointer rounded-full"
+              class="block w-5 h-5 cursor-pointer
+                {% if section.settings.variant_swatch_shape == 'circle' %}rounded-full{% endif %}
+                {% if section.settings.variant_swatch_shape == 'square' %}rounded-md{% endif %}
+              "
               style="background-color: {{ swatch_hex }};">
             </span>
             <span class="variant-swatch-title sr-only">{{ title }}</span>
             <span
-              class="pointer-events-none absolute inset-[-4px] rounded-full border border-transparent peer-checked:border-[#0A4874] peer-checked:border-1">
+              class="pointer-events-none absolute inset-[-4px] border border-transparent peer-checked:border-[#0A4874] peer-checked:border-1
+                {% if section.settings.variant_swatch_shape == 'circle' %}rounded-full{% endif %}
+                {% if section.settings.variant_swatch_shape == 'square' %}rounded-md{% endif %}
+              ">
             </span>
           </label>
         {% endfor %}
       </div>
     {% endif %}
     <div class="info flex flex-col gap-[6px]">
-      <h3 class="product-brand text-sm font-normal">
+      <p class="product-brand text-sm font-normal">
         {{ product.metafields.custom.brand }}
-      </h3>
+      </p>
       <h3 class="product-name text-base font-semibold text-[#0A4874]">
         {{ product.title }}
       </h3>

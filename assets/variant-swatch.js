@@ -20,13 +20,37 @@ document.addEventListener("DOMContentLoaded", () => {
       // Update .product-image-default
       const defaultImg = wrapper.querySelector(".product-image-default");
       if (selectedVariant.featured_image) {
-        defaultImg.src = selectedVariant.featured_image;
+        const featured = selectedVariant.featured_image;
+
+        defaultImg.src = `${featured}&width=600`; // main fallback
+        defaultImg.srcset = `
+          ${featured}&width=300 300w,
+          ${featured}&width=600 600w,
+          ${featured}&width=800 800w
+        `;
+        defaultImg.sizes = "(max-width: 640px) 100vw, 300px";
+      }
+      else {
+        defaultImg.src = "";
+        defaultImg.srcset = "";
       }
 
       // Update .product-image-hover
       const hoverImg = wrapper.querySelector(".product-image-hover");
-      if (selectedVariant.metafields.custom.image_hover) {
-        hoverImg.src = selectedVariant.metafields.custom.image_hover;
+      if (selectedVariant.metafields?.custom?.image_hover) {
+        const hover = selectedVariant.metafields.custom.image_hover;
+
+        hoverImg.src = `${hover}&width=600`; // main fallback
+        hoverImg.srcset = `
+          ${hover}&width=300 300w,
+          ${hover}&width=600 600w,
+          ${hover}&width=800 800w
+        `;
+        hoverImg.sizes = "(max-width: 640px) 100vw, 300px";
+      }
+      else {
+        hoverImg.src = "";
+        hoverImg.srcset = "";
       }
 
       // Update price
