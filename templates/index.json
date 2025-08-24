@@ -15,25 +15,19 @@
         "product_card_XAz8T4": {
           "type": "product-card",
           "name": "Product Card",
-          "settings": {
-            "product": "sale-false-variants-false"
-          },
+          "settings": {},
           "blocks": {}
         },
         "product_card_Verqan": {
           "type": "product-card",
           "name": "Product Card",
-          "settings": {
-            "product": ""
-          },
+          "settings": {},
           "blocks": {}
         },
         "product_card_DzFwRJ": {
           "type": "product-card",
           "name": "Product Card",
-          "settings": {
-            "product": ""
-          },
+          "settings": {},
           "blocks": {}
         }
       },
@@ -42,12 +36,7 @@
         "product_card_Verqan",
         "product_card_DzFwRJ"
       ],
-      "settings": {
-        "section_title": "Featured Products",
-        "show_section_title": true,
-        "variant_swatch_shape": "circle",
-        "show_discount_percentage": true
-      }
+      "settings": {}
     }
   },
   "order": [
