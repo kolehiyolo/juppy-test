@@ -3,13 +3,15 @@ document.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", async (e) => {
       e.preventDefault();
 
+      // Fetch variantId IF there are variant-swatches
       const card = button.closest(".bottom"); 
       const selectedInput = card.querySelector("input[type=radio]:checked");
       const variantId = selectedInput ? selectedInput.value : null;
 
       if (!variantId) {
-        alert("Please select a variant.");
-        return;
+        const variantsData = JSON.parse(wrapper.querySelector("[data-variants]").textContent);
+        const variantId = variantsData[0].id;
+        console.log(variantId);
       }
 
       try {
