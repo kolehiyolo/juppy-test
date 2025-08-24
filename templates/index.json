@@ -15,19 +15,25 @@
         "product_card_XAz8T4": {
           "type": "product-card",
           "name": "Product Card",
-          "settings": {},
+          "settings": {
+            "product": "shirt"
+          },
           "blocks": {}
         },
         "product_card_Verqan": {
           "type": "product-card",
           "name": "Product Card",
-          "settings": {},
+          "settings": {
+            "product": "sale-true-variants-true"
+          },
           "blocks": {}
         },
         "product_card_DzFwRJ": {
           "type": "product-card",
           "name": "Product Card",
-          "settings": {},
+          "settings": {
+            "product": "sale-false-variants-false"
+          },
           "blocks": {}
         }
       },
@@ -36,7 +42,12 @@
         "product_card_Verqan",
         "product_card_DzFwRJ"
       ],
-      "settings": {}
+      "settings": {
+        "section_title": "Featured Products",
+        "show_section_title": true,
+        "variant_swatch_shape": "circle",
+        "show_discount_percentage": true
+      }
     }
   },
   "order": [
