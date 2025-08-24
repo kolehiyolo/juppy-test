@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Fetch variantId IF there are variant-swatches
       const card = button.closest(".bottom"); 
       const selectedInput = card.querySelector("input[type=radio]:checked");
-      const variantId = selectedInput ? selectedInput.value : null;
+      let variantId = selectedInput ? selectedInput.value : null;
 
       if (!variantId) {
         const wrapper = button.closest(".product");
